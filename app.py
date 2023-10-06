@@ -1,21 +1,16 @@
 import uvicorn
 from fastapi import FastAPI
 from joblib import load
-from pydantic import  BaseModel
+#from pydantic import  BaseModel
 
 import pandas as pd
 import numpy as np
 
-
-
 app = FastAPI(title="Modèle de scoring", description="API pour le modèle de scoring")
-
 # Load the data
 data = pd.read_csv('test_production.csv')
-
 # Define a global variable for the model
 model = None
-
 @app.on_event('startup')
 def load_model():
     # Use the global keyword to indicate that we are using the global model variable
