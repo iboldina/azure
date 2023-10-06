@@ -2,6 +2,8 @@ import uvicorn
 from fastapi import FastAPI
 from joblib import load
 import sklearn
+import lightgbm
+
 #from pydantic import  BaseModel
 
 import pandas as pd
